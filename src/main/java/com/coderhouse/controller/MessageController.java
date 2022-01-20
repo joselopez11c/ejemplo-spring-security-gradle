@@ -3,8 +3,6 @@ package com.coderhouse.controller;
 import com.coderhouse.handle.ApiRestException;
 import com.coderhouse.model.Message;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,7 +37,6 @@ public class MessageController {
     @GetMapping("/mensajes/{id}")
     public Message getMensajeById(@PathVariable Long id) throws ApiRestException {
         log.info("GET obtener mensaje por el id");
-
         if (id == 0) {
             throw new ApiRestException("El identificador del mensaje debe ser mayor a 0");
         }
